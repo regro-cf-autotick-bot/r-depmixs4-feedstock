@@ -7,7 +7,7 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-depmixs4-feed
 About r-depmixs4
 ----------------
 
-Home: http://depmix.r-forge.r-project.org/
+Home: https://depmix.github.io/
 
 Package license: GPL-2.0-or-later
 
@@ -16,7 +16,7 @@ Summary: Fits latent (hidden) Markov models on mixed categorical and continuous 
 About r-depmixs4
 ----------------
 
-Home: http://depmix.r-forge.r-project.org/
+Home: https://depmix.github.io/
 
 Package license: GPL-2.0-or-later
 
