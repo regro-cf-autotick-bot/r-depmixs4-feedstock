@@ -1,22 +1,25 @@
-{% set version = "1.5-1" %}
+{% set version = "1.5-2" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
   name: r-depmixs4
-  version: {{ version|replace("-", "_") }}
+  version: "{{ version|replace("-", "_") }}"
 
 source:
   url:
     - {{ cran_mirror }}/src/contrib/depmixS4_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/depmixS4/depmixS4_{{ version }}.tar.gz
-  sha256: 12713b1a31d6a2c7f205ee2159f8bed01de308163fee297255ef249c72013536
+  sha256: b47d2bceee8ccea07f7b39307723a0cbc1367e33065435aeb6e93fef355b1d4d
 
 build:
-  skip: true  # [r_base == "3.6"]
-  number: 1
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
+  missing_dso_whitelist:
+    - '*/R.dll'        # [win]
+    - '*/Rblas.dll'    # [win]
+    - '*/Rlapack.dll'  # [win]
 
 requirements:
   build:
@@ -48,7 +51,7 @@ test:
     - "\"%R%\" -e \"library('depmixS4')\""  # [win]
 
 about:
-  home: http://depmix.r-forge.r-project.org/
+  home: https://depmix.github.io/
   license: GPL-2.0-or-later
   summary: Fits latent (hidden) Markov models on mixed categorical and continuous (time series) data, otherwise known as dependent mixture models, see Visser & Speekenbrink (2010, <DOI:10.18637/jss.v036.i07>).
   license_family: GPL2
