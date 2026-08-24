@@ -1,15 +1,15 @@
-{% set version = "1.5-3" %}
+{% set version = "1.5-4" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
   name: r-depmixs4
-  version: "{{ version|replace("-", "_") }}"
+  version: {{ version|replace("-", "_") }}
 
 source:
   url:
     - {{ cran_mirror }}/src/contrib/depmixS4_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/depmixS4/depmixS4_{{ version }}.tar.gz
-  sha256: ef8a35deae4e63674b0c28498d88d9bbff2d6a364d1615a7a0d3826f58d6d930
+  sha256: 0e8c0f227f4e57cd07f72025dcce289fd06fa46fead7b631a50776d2019e290e
 
 build:
   number: 0
